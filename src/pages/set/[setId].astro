@@ -1,0 +1,28 @@
+---
+import Layout from "../../layout/layout.astro";
+const { setId } = Astro.params;
+import { globals, getSetById, getCardsBySet } from "../../data";
+import ImageGrid from "../../components/ImageGrid";
+
+export const getStaticPaths = () => {
+  return globals.sets.map((set) => ({
+    params: { setId: set.nameRef },
+  }));
+};
+
+const set = getSetById(setId);
+const cards = getCardsBySet(setId);
+
+const gridProps = cards.slice(0,20).map(card => ({
+  title: card.name,
+  imgPath: card.assets[0].fullAbsolutePath,
+  url: `/card/${card.cardCode}`
+}))
+
+---
+
+<Layout>
+  <h1>{set?.name}</h1>
+  <ImageGrid data={gridProps} />
+
+</Layout>
