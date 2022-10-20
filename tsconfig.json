@@ -1,4 +1,6 @@
 {
-  "extends": "astro/tsconfigs/strict",
-  "resolveJsonModule": true
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "resolveJsonModule": true,
+  }
 }

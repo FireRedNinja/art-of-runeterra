@@ -1,13 +1,13 @@
 ---
 import ImageGrid from "../components/ImageGrid";
 import Layout from "../layout/layout.astro";
-import { data, globals } from "../data/";
+import { data, globals, regions } from "../data/";
 
-const gridData = globals.sets.map((set) => ({
-	imgPath: set.iconAbsolutePath,
-	title: set.name,
-	key: set.nameRef,
-	url: `/set/${set.nameRef}`
+const gridData = regions.map((region) => ({
+  imgPath: region.iconAbsolutePath,
+  title: region.name,
+  key: region.nameRef,
+  url: `/region/${region.nameRef}`,
 }));
 ---
 

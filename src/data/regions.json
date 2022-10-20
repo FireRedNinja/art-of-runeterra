@@ -1,0 +1,70 @@
+{
+  "regions": [
+    {
+      "abbreviation": "NX",
+      "iconAbsolutePath": "http://dd.b.pvp.net/3_17_0/core/en_us/img/regions/icon-noxus.png",
+      "name": "Noxus",
+      "nameRef": "Noxus"
+    },
+    {
+      "abbreviation": "DE",
+      "iconAbsolutePath": "http://dd.b.pvp.net/3_17_0/core/en_us/img/regions/icon-demacia.png",
+      "name": "Demacia",
+      "nameRef": "Demacia"
+    },
+    {
+      "abbreviation": "RU",
+      "iconAbsolutePath": "http://dd.b.pvp.net/3_17_0/core/en_us/img/regions/icon-runeterra.png",
+      "name": "Runeterra",
+      "nameRef": "Runeterra"
+    },
+    {
+      "abbreviation": "FR",
+      "iconAbsolutePath": "http://dd.b.pvp.net/3_17_0/core/en_us/img/regions/icon-freljord.png",
+      "name": "Freljord",
+      "nameRef": "Freljord"
+    },
+    {
+      "abbreviation": "SI",
+      "iconAbsolutePath": "http://dd.b.pvp.net/3_17_0/core/en_us/img/regions/icon-shadowisles.png",
+      "name": "Shadow Isles",
+      "nameRef": "ShadowIsles"
+    },
+    {
+      "abbreviation": "MT",
+      "iconAbsolutePath": "http://dd.b.pvp.net/3_17_0/core/en_us/img/regions/icon-targon.png",
+      "name": "Targon",
+      "nameRef": "Targon"
+    },
+    {
+      "abbreviation": "IO",
+      "iconAbsolutePath": "http://dd.b.pvp.net/3_17_0/core/en_us/img/regions/icon-ionia.png",
+      "name": "Ionia",
+      "nameRef": "Ionia"
+    },
+    {
+      "abbreviation": "SH",
+      "iconAbsolutePath": "http://dd.b.pvp.net/3_17_0/core/en_us/img/regions/icon-shurima.png",
+      "name": "Shurima",
+      "nameRef": "Shurima"
+    },
+    {
+      "abbreviation": "BW",
+      "iconAbsolutePath": "http://dd.b.pvp.net/3_17_0/core/en_us/img/regions/icon-bilgewater.png",
+      "name": "Bilgewater",
+      "nameRef": "Bilgewater"
+    },
+    {
+      "abbreviation": "PZ",
+      "iconAbsolutePath": "http://dd.b.pvp.net/3_17_0/core/en_us/img/regions/icon-piltoverzaun.png",
+      "name": "Piltover & Zaun",
+      "nameRef": "PiltoverZaun"
+    },
+    {
+      "abbreviation": "BC",
+      "iconAbsolutePath": "http://dd.b.pvp.net/3_17_0/core/en_us/img/regions/icon-bandlecity.png",
+      "name": "Bandle City",
+      "nameRef": "BandleCity"
+    }
+  ]
+}
