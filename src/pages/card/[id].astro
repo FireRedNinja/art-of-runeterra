@@ -2,6 +2,7 @@
 import Layout from "../../layout/layout.astro";
 const { id } = Astro.params;
 import { cardCodes, getCardById } from "../../data";
+import { Image } from "@astrojs/image/components";
 
 export const getStaticPaths = () => {
   return cardCodes.map((id) => ({
@@ -15,6 +16,8 @@ const card = getCardById(id);
 <Layout>
   <h1>{`${card?.name} by ${card?.artistName}`}</h1>
   <p>{card?.flavorText}</p>
-  <img src={card?.assets[0].fullAbsolutePath} alt="" />
-  <img src={card?.assets[0].gameAbsolutePath} alt="" />
+  <!-- <Image src={card?.assets[0].fullAbsolutePath} alt="" height={1024} aspectRatio={2}/> -->
+  <div class="flex justify-center">
+    <img src={card?.assets[0].fullAbsolutePath} alt="" loading="lazy" decoding="async"/>
+  </div>
 </Layout>

@@ -1,0 +1,20 @@
+---
+import { Image } from "@astrojs/image/components";
+import Styles from "./ImageTile.module.scss";
+
+type ImageTileProps = {
+  title?: string;
+  imgPath?: string;
+  key?: string;
+  url?: string;
+};
+
+const { title, imgPath, url, key }: ImageTileProps = Astro.props;
+---
+
+<a href={`/art-of-runeterra${url ?? "/#"}`}>
+  <div class={Styles.ImageTile}>
+    <Image src={imgPath} alt="" height={325.5} aspectRatio={2} fit="cover" position="centre" format="avif" quality={50} />
+    <span class={Styles.title}>{title}</span>
+  </div>
+</a>
