@@ -14,7 +14,16 @@ const { title, imgPath, url, key }: ImageTileProps = Astro.props;
 
 <a href={`/art-of-runeterra${url ?? "/#"}`}>
   <div class={Styles.ImageTile}>
-    <Image src={imgPath} alt="" height={325.5} aspectRatio={2} fit="cover" position="centre" format="avif" quality={50} />
+    <Image
+      src={imgPath}
+      alt=""
+      height={325.5}
+      aspectRatio={2}
+      fit="cover"
+      position="centre"
+      format="avif"
+      quality={50}
+    />
     <span class={Styles.title}>{title}</span>
   </div>
 </a>

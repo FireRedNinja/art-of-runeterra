@@ -18,6 +18,11 @@ const card = getCardById(id);
   <p>{card?.flavorText}</p>
   <!-- <Image src={card?.assets[0].fullAbsolutePath} alt="" height={1024} aspectRatio={2}/> -->
   <div class="flex justify-center">
-    <img src={card?.assets[0].fullAbsolutePath} alt="" loading="lazy" decoding="async"/>
+    <img
+      src={card?.assets[0].fullAbsolutePath}
+      alt=""
+      loading="lazy"
+      decoding="async"
+    />
   </div>
 </Layout>
