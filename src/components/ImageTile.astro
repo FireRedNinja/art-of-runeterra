@@ -1,6 +1,5 @@
 ---
 import { Image } from "@astrojs/image/components";
-import Styles from "./ImageTile.module.scss";
 
 type ImageTileProps = {
   title?: string;
@@ -12,11 +11,12 @@ type ImageTileProps = {
 const { title, imgPath, url, key }: ImageTileProps = Astro.props;
 ---
 
-<a href={`/art-of-runeterra${url ?? "/#"}`}>
-  <div class={Styles.ImageTile}>
+<a href={`/art-of-runeterra${url ?? "/#"}`} >
+  <div class="flex flex-col h-64 bg-gray-900 justify-center items-center">
     <Image
       src={imgPath}
       alt=""
+      class="h-full object-cover overflow-hidden opacity-40"
       height={325.5}
       aspectRatio={2}
       fit="cover"
@@ -24,6 +24,6 @@ const { title, imgPath, url, key }: ImageTileProps = Astro.props;
       format="avif"
       quality={50}
     />
-    <span class={Styles.title}>{title}</span>
+    <span class="flex absolute text-white" >{title}</span>
   </div>
 </a>
