@@ -9,10 +9,10 @@ import { regions } from "./regions.json";
 
 const data = [...set1, ...set2, ...set3, ...set4, ...set5, ...set6];
 const cardCodes = data.map((card) => card.cardCode);
-const getCardById = (id) => data.find((card) => card.cardCode === id);
-const getCardsByRegion = (regionRef) =>
+const getCardById = (id: any) => data.find((card) => card.cardCode === id);
+const getCardsByRegion = (regionRef: any) =>
   data.filter((card) => card.regionRefs.includes(regionRef));
-const getRegionByRegionRef = (regionRef) =>
+const getRegionByRegionRef = (regionRef:any) =>
   regions.find((region) => regionRef === region.nameRef);
 
 export {
