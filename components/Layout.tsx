@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 
 const Layout = ({ children }: any) => {
   return (
@@ -10,7 +11,7 @@ const Layout = ({ children }: any) => {
       </Head>
       <nav className="container mx-auto py-4">
         <h1 className="text-3xl">
-          <a href="/"> The Art of Legends of Runeterra</a>
+          <Link href="/"> The Art of Legends of Runeterra</Link>
         </h1>
       </nav>
       <main className="container mx-auto">{children}</main>
