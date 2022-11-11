@@ -1,6 +1,6 @@
 import ImageGrid from "../../components/ImageGrid";
 import Layout from "../../components/Layout";
-import { getRegionByRegionRef, getCardsByRegion, regions } from "../../data";
+import { getRegionByRegionRef, getCardsByRegion, regionsData as regions } from "../../data";
 
 export const getStaticPaths = () => {
   return {
