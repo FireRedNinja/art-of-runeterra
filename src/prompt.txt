@@ -1,0 +1,25 @@
+// Project: Art of Runeterra
+// Description: A static web app built with Astro, Svelte, Tailwind CSS, and svelte-motion. 
+// It showcases card art from Legends of Runeterra using Riot's Data Dragon assets and metadata.
+//
+// This project uses preprocessed data from:
+// - `data/cards.json`: an array of normalized cards with fields like:
+//    {
+//      code: string,
+//      name: string,
+//      artist: string,
+//      region: string,
+//      rarity: string,
+//      type: string,
+//      keywords: string[],
+//      fullArtUrl: string (may be replaced with a local /images/cards/{code}.png)
+//    }
+//
+// Goals for this file:
+// 1. Create a responsive, animated gallery of cards.
+// 2. Support filtering by region, type, and rarity.
+// 3. Apply lazy-loading and animations using svelte-motion.
+//
+// Continue implementing the frontend of the app.
+// Use idiomatic Svelte components with Tailwind classes.
+// Suggest smooth transitions and responsive UI patterns where possible.

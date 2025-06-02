@@ -10,11 +10,21 @@ import regions from "./regions.json";
 const regionsData = regions.regions;
 const data = [...set1, ...set2, ...set3, ...set4, ...set5, ...set6];
 const cardCodes = data.map((card) => card.cardCode);
+
 const getCardById = (id: any) => data.find((card) => card.cardCode === id);
+
 const getCardsByRegion = (regionRef: any) =>
   data.filter((card) => card.regionRefs.includes(regionRef));
+
 const getRegionByRegionRef = (regionRef: any) =>
   regionsData.find((region) => regionRef === region.nameRef);
+
+// getCards
+// get all cards that are collectable
+
+// let set = new Set();
+// data.map(card => set.add(...card.regions))
+// console.log(set)
 
 export {
   data,
