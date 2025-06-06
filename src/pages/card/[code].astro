@@ -1,0 +1,37 @@
+---
+import CardDetail from "../../components/CardDetail.svelte";
+import cards from "../../data/cards.json";
+
+import "./src/styles/global.css";
+
+export async function getStaticPaths() {
+  return cards.map((card) => ({ params: { code: card.code } }));
+}
+
+const { code } = Astro.params;
+const card = cards.find((c) => c.code === code);
+const related = card?.associatedCards
+  ? cards.filter((c) => card.associatedCards.includes(c.code))
+  : [];
+---
+
+<html lang="en">
+  <head>
+    <title>{card ? card.name : "Card Not Found"} | Art of Runeterra</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body class="bg-gray-950 min-h-screen">
+    <main class="max-w-screen px-4 py-8 mx-4 sm:mx-8 md:mx-16 lg:mx-32">
+      <a href="/" class="text-blue-400 hover:underline mb-4 inline-block"
+        >&larr; Back to Gallery</a
+      >
+      {
+        card ? (
+          <CardDetail card={card} related={related} />
+        ) : (
+          <div class="text-white">Card not found.</div>
+        )
+      }
+    </main>
+  </body>
+</html>

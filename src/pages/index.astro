@@ -1,0 +1,25 @@
+---
+import cards from "../data/cards.json";
+import ImageGrid from "../components/ImageGrid.svelte";
+
+import "./src/styles/global.css";
+
+const title = "Art of Runeterra";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+  </head>
+  <body class="bg-gray-950 min-h-screen">
+    <main class="container mx-auto px-4 py-8">
+      <h1 class="text-3xl font-bold mb-6 text-center text-white">
+        {title}
+      </h1>
+      <ImageGrid cards={cards} />
+    </main>
+  </body>
+</html>
