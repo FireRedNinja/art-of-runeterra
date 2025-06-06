@@ -2,7 +2,7 @@
 import CardDetail from "../../components/CardDetail.svelte";
 import cards from "../../data/cards.json";
 
-import "./src/styles/global.css";
+import "../../styles/global.css";
 
 export async function getStaticPaths() {
   return cards.map((card) => ({ params: { code: card.code } }));
@@ -22,7 +22,9 @@ const related = card?.associatedCards
   </head>
   <body class="bg-gray-950 min-h-screen">
     <main class="max-w-screen px-4 py-8 mx-4 sm:mx-8 md:mx-16 lg:mx-32">
-      <a href="/" class="text-blue-400 hover:underline mb-4 inline-block"
+      <a
+        href="/art-of-runeterra"
+        class="text-blue-400 hover:underline mb-4 inline-block"
         >&larr; Back to Gallery</a
       >
       {

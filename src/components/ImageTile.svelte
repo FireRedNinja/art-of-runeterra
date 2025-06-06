@@ -2,7 +2,7 @@
   export let card: any;
 </script>
 
-<a href={`/card/${card.code}`} class="block group">
+<a href={`/art-of-runeterra/card/${card.code}`} class="block group">
   <div class="aspect-[3/4] rounded-lg overflow-hidden shadow-lg bg-gray-900 transform transition duration-200 group-hover:scale-105 group-hover:shadow-2xl">
     <img
       src={card.fullArtUrl}
