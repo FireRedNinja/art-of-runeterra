@@ -13,6 +13,6 @@
   </div>
   <div class="mt-2 text-center">
     <div class="text-white font-semibold truncate">{card.name}</div>
-    <div class="text-xs text-gray-400">{card.region} &middot; {card.rarity}</div>
+    <div class="text-xs text-gray-400">{card.region} - {card.type} {card.rarity != 'None' ? `- ${card.rarity}` : ''}</div>
   </div>
 </a>

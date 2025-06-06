@@ -63,12 +63,14 @@ const extractCards = (setName, regionMap, rarityMap, keywordMap) => {
     code: card.cardCode,
     name: card.name,
     description: card.descriptionRaw,
+    flavourText: card.flavorText,
     artist: card.artistName,
-    region: regionMap[card.regionRef] ?? card.regionRef,
+    region: (card.regionRefs ?? []).map((r) => regionMap[r] ?? r),
     type: card.type,
-    rarity: rarityMap[card.rarityRef] ?? card.rarityRef,
+    rarity: card.rarityRef,
     keywords: (card.keywordRefs ?? []).map((k) => keywordMap[k] ?? k),
     fullArtUrl: card.assets?.[0]?.fullAbsolutePath ?? null,
+    associatedCards: card?.associatedCardRefs ?? [],
   }));
 };
 
@@ -106,6 +108,7 @@ const build = async () => {
       await downloadAndExtract(name, url);
     }
 
+    console.log(`🔍 Extracting cards from ${name}...`);
     const cards = extractCards(name, regionMap, rarityMap, keywordMap);
     allCards.push(...cards);
   }

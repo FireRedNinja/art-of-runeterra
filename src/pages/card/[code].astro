@@ -10,8 +10,8 @@ export async function getStaticPaths() {
 
 const { code } = Astro.params;
 const card = cards.find((c) => c.code === code);
-const related = card?.associatedCardRefs
-  ? cards.filter((c) => card.associatedCardRefs.includes(c.code))
+const related = card?.associatedCards
+  ? cards.filter((c) => card.associatedCards.includes(c.code))
   : [];
 ---
 

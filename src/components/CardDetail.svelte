@@ -1,6 +1,11 @@
 <script lang="ts">
-  export let card: any;
-  export let related: any[] = [];
+  import type { Card } from '../types';
+  export let card: Card;
+  export let related: {
+    code: string;
+    name: string;
+    fullArtUrl: string;
+  }[] = [];
 </script>
 
 <div class="flex flex-col md:flex-row gap-8 items-start">
@@ -9,9 +14,9 @@
   </div>
   <div class="flex-1 text-white">
     <h2 class="text-2xl font-bold mb-2">{card.name}</h2>
-    <div class="mb-2 text-gray-400">{card.region} &middot; {card.rarity} &middot; {card.type}</div>
-    {#if card.flavorText}
-      <blockquote class="italic text-gray-300 mb-4">"{card.flavorText}"</blockquote>
+    <div class="mb-2 text-gray-400">{card.region} - {card.rarity} - {card.type}</div>
+    {#if card.flavourText}
+      <blockquote class="italic text-gray-300 mb-4">{card.flavourText}</blockquote>
     {/if}
     <div class="mb-4">{card.description}</div>
     <div class="mb-2">
@@ -30,9 +35,16 @@
         <h3 class="font-semibold mb-2">Related Cards</h3>
         <div class="flex flex-wrap gap-4">
           {#each related as rel}
-            <a href={`/card/${rel.code}`} class="block w-24">
-              <img src={rel.fullArtUrl} alt={rel.name} class="rounded shadow" loading="lazy" />
-              <div class="text-xs text-center mt-1 text-gray-300 truncate">{rel.name}</div>
+            <a href={`/card/${rel.code}`} class="block text-center w-24">
+              <div class="w-24 h-32 overflow-hidden rounded shadow-lg">
+                <img
+                  src={rel.fullArtUrl}
+                  alt={rel.name}
+                  class="object-cover w-full h-full transition-transform duration-200 hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
+              <div class="text-xs text-gray-300 mt-1 truncate">{rel.name}</div>
             </a>
           {/each}
         </div>
