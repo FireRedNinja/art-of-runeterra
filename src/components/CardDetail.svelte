@@ -37,7 +37,7 @@
         <h3 class="text-2xl font-semibold mb-4 text-center">Related Cards</h3>
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 justify-items-center">
           {#each related as rel}
-            <a href={`/card/${rel.code}`} class="block text-center w-full max-w-[150px]">
+            <a href={`/art-of-runeterra/card/${rel.code}`} class="block text-center w-full max-w-[150px]">
               <div class="aspect-[3/4] overflow-hidden rounded shadow-lg bg-gray-800">
                 <img
                   src={rel.fullArtUrl}

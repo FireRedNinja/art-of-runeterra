@@ -1,10 +1,14 @@
 ---
-import cards from "../data/cards.json";
+import cardsData from "../data/cards.json";
 import ImageGrid from "../components/ImageGrid.svelte";
-
+import Filters from "../components/Filters.svelte";
 import "../styles/global.css";
+import type { Card } from "../types";
 
 const title = "Art of Runeterra";
+const allCards: Card[] = cardsData;
+const allRegions = [...new Set(allCards.flatMap((card) => card.region))].sort();
+const allTypes = [...new Set(allCards.map((card) => card.type))].sort();
 ---
 
 <html lang="en">
@@ -19,7 +23,18 @@ const title = "Art of Runeterra";
       <h1 class="text-3xl font-bold mb-6 text-center text-white">
         {title}
       </h1>
-      <ImageGrid cards={cards} />
+      <Filters client:load allRegions={allRegions} allTypes={allTypes} />
+      <ImageGrid client:load cards={allCards} />
     </main>
   </body>
 </html>
+
+<style>
+  filters-component {
+    display: block;
+    margin-bottom: 2rem;
+  }
+  image-grid-component {
+    display: block;
+  }
+</style>
