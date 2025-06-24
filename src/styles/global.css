@@ -1,1 +1,14 @@
 @import "tailwindcss";
+@import "@fontsource/oswald/400.css";
+@import "@fontsource/open-sans/400.css";
+
+h1,
+h2,
+h3 {
+  font-family: "Oswald", sans-serif;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #282329;
+}

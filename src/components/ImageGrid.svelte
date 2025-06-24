@@ -10,7 +10,7 @@
   const filteredCards = derived([
     filterStore
   ], ([filters]) => {
-    return cards.filter((card) => {
+    let result = cards.filter((card) => {
       const nameMatch = card.name
         .toLowerCase()
         .includes(filters.searchTerm);
@@ -19,6 +19,14 @@
       const typeMatch = filters.selectedType === "" || card.type === filters.selectedType;
       return nameMatch && regionMatch && typeMatch;
     });
+    result = result.slice().sort((a, b) => {
+      if (filters.sortOrder === 'desc') {
+        return b.code.localeCompare(a.code);
+      } else {
+        return a.code.localeCompare(b.code);
+      }
+    });
+    return result;
   });
 </script>
 

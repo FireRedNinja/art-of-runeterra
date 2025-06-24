@@ -9,8 +9,8 @@
 </script>
 
 <div class="flex flex-col gap-8 items-center" id="card-detail">
-  <div class="w-full">
-    <img src={card.fullArtUrl} alt={card.name} class="rounded-lg shadow-xl w-full object-contain" />
+  <div class="w-full flex justify-center items-center">
+    <img src={card.fullArtUrl} alt={card.name} class="rounded-lg shadow-xl max-w-full object-contain max-h-[500px]" />
   </div>
   <div class="max-w-7xl text-white px-4">
     <h2 class="text-3xl font-bold mb-3 text-center">{card.name}</h2>
@@ -27,7 +27,7 @@
         <span class="font-semibold">Keywords:</span>
         <div class="flex flex-wrap gap-2 mt-1">
           {#each card.keywords as kw}
-            <span class="inline-block bg-gray-800 rounded px-2.5 py-1 text-sm font-medium">{kw}</span>
+            <span class="inline-block badge-bg rounded px-2.5 py-1 text-sm font-medium">{kw}</span>
           {/each}
         </div>
       </div>
@@ -54,3 +54,9 @@
     {/if}
   </div>
 </div>
+
+<style>
+.badge-bg {
+  background-color: #1f1c1f;
+  }
+  </style>

@@ -1,5 +1,7 @@
 <script lang="ts">
   export let card: any;
+
+  let region = card.region.join(', ');
 </script>
 
 <a href={`/art-of-runeterra/card/${card.code}`} class="block group">
@@ -12,7 +14,7 @@
     />
   </div>
   <div class="mt-2 text-center">
-    <div class="text-white font-semibold truncate">{card.name}</div>
-    <div class="text-xs text-gray-400">{card.region} - {card.type} {card.rarity != 'None' ? `- ${card.rarity}` : ''}</div>
+    <h2 class="text-white font-semibold truncate">{card.name}</h2>
+    <div class="text-xs text-gray-400">{region} - {card.type}</div>
   </div>
 </a>
