@@ -4,6 +4,7 @@ import ImageGrid from "../components/ImageGrid.svelte";
 import Filters from "../components/Filters.svelte";
 import "../styles/global.css";
 import type { Card } from "../types";
+import SiteFooter from "../components/SiteFooter.svelte";
 
 const title = "Art of Runeterra";
 const allCards: Card[] = cardsData;
@@ -26,6 +27,7 @@ const allTypes = [...new Set(allCards.map((card) => card.type))].sort();
       <Filters client:load allRegions={allRegions} allTypes={allTypes} />
       <ImageGrid client:load cards={allCards} />
     </main>
+    <SiteFooter />
   </body>
 </html>
 

@@ -14,7 +14,7 @@
   </div>
   <div class="max-w-7xl text-white px-4">
     <h2 class="text-3xl font-bold mb-3 text-center">{card.name}</h2>
-    <div class="mb-3 text-gray-400 text-center">{card.region} - {card.rarity} - {card.type}</div>
+    <div class="mb-3 text-gray-400 text-center">{card.region.join(', ')} - {card.rarity} - {card.type}</div>
     {#if card.flavourText}
       <blockquote class="italic text-gray-300 mb-5 text-center text-lg">"{card.flavourText}"</blockquote>
     {/if}
@@ -38,11 +38,11 @@
         <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 justify-items-center">
           {#each related as rel}
             <a href={`/art-of-runeterra/card/${rel.code}`} class="block text-center w-full max-w-[150px]">
-              <div class="aspect-[3/4] overflow-hidden rounded shadow-lg bg-gray-800">
+              <div class="aspect-[3/4] overflow-hidden rounded shadow-lg bg-gray-800 transform transition duration-200 hover:scale-105">
                 <img
                   src={rel.fullArtUrl}
                   alt={rel.name}
-                  class="object-cover w-full h-full transition-transform duration-200 hover:scale-105"
+                  class="object-cover w-full h-full"
                   loading="lazy"
                 />
               </div>

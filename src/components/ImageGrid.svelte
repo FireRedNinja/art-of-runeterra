@@ -39,9 +39,3 @@
     <p class="text-white col-span-full text-center">No cards match your current filters.</p>
   {/if}
 </div>
-
-<style>
-  image-grid-component {
-    display: block;
-  }
-</style>
