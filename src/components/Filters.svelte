@@ -3,10 +3,10 @@
   export let allRegions: string[] = [];
   export let allTypes: string[] = [];
 
-  let searchTerm = '';
-  let selectedRegion = '';
-  let selectedType = '';
-  let sortOrder: CardFilters['sortOrder'] = 'desc';
+  let searchTerm = "";
+  let selectedRegion = "";
+  let selectedType = "";
+  let sortOrder: CardFilters["sortOrder"] = "desc";
 
   $: filterStore.set({
     searchTerm: searchTerm.toLowerCase(),
@@ -19,7 +19,9 @@
 <div class="mb-8 p-4 bg-gray-800 rounded-lg shadow-md bg-col">
   <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
     <div>
-      <label for="search" class="block text-sm font-medium text-gray-300 mb-1">Search by Name</label>
+      <label for="search" class="block text-sm font-medium text-gray-300 mb-1"
+        >Search by Name</label
+      >
       <input
         type="text"
         id="search"
@@ -29,7 +31,9 @@
       />
     </div>
     <div>
-      <label for="region" class="block text-sm font-medium text-gray-300 mb-1">Filter by Region</label>
+      <label for="region" class="block text-sm font-medium text-gray-300 mb-1"
+        >Filter by Region</label
+      >
       <select
         id="region"
         bind:value={selectedRegion}
@@ -42,7 +46,9 @@
       </select>
     </div>
     <div>
-      <label for="type" class="block text-sm font-medium text-gray-300 mb-1">Filter by Type</label>
+      <label for="type" class="block text-sm font-medium text-gray-300 mb-1"
+        >Filter by Type</label
+      >
       <select
         id="type"
         bind:value={selectedType}
@@ -55,7 +61,9 @@
       </select>
     </div>
     <div>
-      <label for="sort" class="block text-sm font-medium text-gray-300 mb-1">Sort by</label>
+      <label for="sort" class="block text-sm font-medium text-gray-300 mb-1"
+        >Sort by</label
+      >
       <select
         id="sort"
         bind:value={sortOrder}
@@ -69,7 +77,7 @@
 </div>
 
 <style>
-.bg-col {
-  background-color: #1f1c1f;
-}
+  .bg-col {
+    background-color: #1f1c1f;
+  }
 </style>

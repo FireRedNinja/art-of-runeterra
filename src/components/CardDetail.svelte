@@ -13,7 +13,7 @@
     <img src={card.fullArtUrl} alt={card.name} class="rounded-lg shadow-xl max-w-full object-contain max-h-[500px]" />
   </div>
   <div class="max-w-7xl text-white px-4">
-    <h2 class="text-3xl font-bold mb-3 text-center">{card.name}</h2>
+    <h2 class="text-3xl font-bold mb-3 text-center">{card.name.toUpperCase()}</h2>
     <div class="mb-3 text-gray-400 text-center">{card.region.join(', ')} - {card.rarity} - {card.type}</div>
     {#if card.flavourText}
       <blockquote class="italic text-gray-300 mb-5 text-center text-lg">"{card.flavourText}"</blockquote>
